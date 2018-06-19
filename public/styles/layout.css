@@ -3,10 +3,14 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -28,9 +32,75 @@ main.container {
   margin: auto;
   margin-top: 80px;
   background-color: white;
+}
+
+#tweet-container article.container {
+  filter: opacity(60%);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+#tweet-container header.tweet {
+  padding: 5px;
+  height: 75px;
+  background-color: #eee;
+}
+
+#tweet-container img.profile {
+  margin: 5px;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  background-color: mediumseagreen;
+  float: left;
+  border-radius: 5px;
+}
+
+#tweet-container H2 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 2;
+}
+
+#tweet-container H2 small {
+  margin-top: 5px;
+  margin-right: 5px;
+  color: darkgrey;
+  font-size: 60%;
+  font-weight: 300;
+  float: right;
+}
+
+#tweet-container p {
+  padding: 5px;
+  width: 100%;
+}
+
+#tweet-container footer {
+  padding: 5px;
+  border-top: 1px solid #eee;
+  font-size: small;
+  color: darkgray;
+}
+
+i {
+  float: right;
+  color: darkturquoise;
+  visibility: hidden;
+}
+
+
+#tweet-container article.container:hover {
+  filter: opacity(100%);
 
 }
 
+#tweet-container article:hover i {
+  visibility: visible;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
