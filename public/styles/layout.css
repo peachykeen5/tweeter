@@ -41,7 +41,7 @@ main.container {
 
 /*  TWEETER FEED SECTION  */
 #tweet-container article.tweeter {
-  filter: opacity(60%);
+  filter: opacity(70%);
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid lightgrey;

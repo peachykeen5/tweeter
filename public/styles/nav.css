@@ -1,3 +1,6 @@
+
+/*  NAVBAR STYLING SECTION   */
+
 nav#nav-bar {
     position: fixed;
     width: 100%;
@@ -26,3 +29,5 @@ nav#nav-bar {
     width: 80px;
     float: left;
 }
+
+/*  END NAVBAR STYLING SECTION   */

@@ -49,56 +49,84 @@ $(document).ready(function () {
 
     //The first function that gets loaded and called
     renderTweet(data);
-    console.log(renderTweet(data));
+    //console.log(renderTweet(data));
 
 
     function renderTweet(data) {
-        //loops over each object in the data array and passes through the createTweetElement function
-        data.forEach(function (element) {
-            var $tweet = createTweetElement(element);
-            //appends the new tweet to the tweet-container
+        for (let index of data) {
+            let $tweet = createTweetElement(index);
             $('#tweet-container').append($tweet);
-        })
+        }
     };
 
-
+    //this function creates the structure of the tweet and appends it to the section
     function createTweetElement(tweet) {
-        var $tweet = $('<article>').addClass('tweeter');
-        var image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile'); //creates new image tag with the avatars small object image source
-        var handle = $('<span>').text(tweet.user.handle).addClass('handle')
-        var userName = $('<h2>').text(tweet.user.name).append(handle);
-        var $header = $('<header>').addClass('tweet');
+        let $tweet = $('<article>').addClass('tweeter');
+        let image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile'); //creates new image tag with the avatars small object image source
+        let handle = $('<span>').text(tweet.user.handle).addClass('handle')
+        let userName = $('<h2>').text(tweet.user.name).append(handle);
+        let $header = $('<header>').addClass('tweet');
         $header.append(image, userName); //adds the image, handle, and username to the header
-        var $tweetBody = $('<p>').text(tweet.content.text);
-        var iconSpan = $('<span>').addClass('icons');
-        var icon1 = $('<i>').addClass("fas fa-flag");
-        var icon2 = $('<i>').addClass("fas fa-retweet");
-        var icon3 = $('<i>').addClass("fas fa-heart");
+        let $tweetBody = $('<p>').text(tweet.content.text);
+        let iconSpan = $('<span>').addClass('icons');
+        let icon1 = $('<i>').addClass("fas fa-flag");
+        let icon2 = $('<i>').addClass("fas fa-retweet");
+        let icon3 = $('<i>').addClass("fas fa-heart");
         iconSpan.append(icon1, icon2, icon3);
-        var $footer = $('<footer>').append(tweet.created_at, iconSpan); //how to put in icons?
+        let $footer = $('<footer>').append(tweet.created_at, iconSpan);
         $tweet.append($header, $tweetBody, $footer); //adds the header, body, and footer to the article
+        //console.log(createTweetElement(data));
         return ($tweet);
     }
 
+    
+    $('form').on('submit', function (e) {
+        e.preventDefault();
+        //gets the data entered into the form and sends it as a serialized string to our //database using the POST method.
+        let data = $('form').serialize();
+        let counter = $('form textarea').val()
+        if (counter.length <= 0) {
+            alert('Please enter some text')
+        } else {
+            if (counter.length > 140 ) {
+                alert('This tweet is too long')
+            } else {
+                $.ajax('/tweets/', {
+                    method: 'POST',
+                    data: data
+                }).done(function () {
+                    $('form textarea').val(''); //clears text area
+                })
+            }
+        }
+    });
+
+    //CONDITIONAL FUNCTION FOR TWEET TEXT AREA LENGTH 
+
+
+    //END CONDITIONAL FUNCTION
+
+//
+////loadTweets is responsible for fetching tweets from the http://localhost:8080/tweets //page.
+function loadTweets() {
+    $.ajax({
+        url: '/tweets/', //makes a request with jQuery to /tweets to receive array  //tweets as JSON
+        method: 'GET',
+        success: function (data) {
+            renderTweet(data);
+        } //success callback will renderTweets;
+    })
+}
+//
+loadTweets();
 
 });
-//var $tweet = createTweetElement(tweet);
-//$('#tweet-container').append($tweet);
 
-
-
-
-
-//var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  * 
- * 
- * Within the app.js file, we're going to define a function createTweetElement that takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
 
 The tweet data object that the function will take will have all the necessary tweet data:
  * 
