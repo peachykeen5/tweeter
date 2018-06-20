@@ -30,4 +30,32 @@ nav#nav-bar {
     float: left;
 }
 
+#nav-bar i {
+    margin: 5px;
+    color: #00a087;
+    visibility: visible;
+    float: left;
+    z-index: 1;
+
+}
+
+#nav-bar .compose {
+    float: right;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: #00a087;
+    line-height: 2;
+    height: 80%;
+
+}
+
+#nav-bar:hover .compose {
+    color: black;
+    cursor: pointer;
+}
+
+#nav-bar:hover i {
+    color: black;
+}
 /*  END NAVBAR STYLING SECTION   */
