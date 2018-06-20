@@ -1,3 +1,6 @@
+
+/*  NEW TWEET STYLING SECTION   */
+
 section.new-tweet {
     border: 1px solid lightgrey;
     border-radius: 5px;
@@ -26,3 +29,4 @@ span.counter {
 .red {
     color: red;
 }
+/*  NEW TWEET STYLING SECTION   */
