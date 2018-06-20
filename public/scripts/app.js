@@ -55,7 +55,7 @@ $(document).ready(function () {
     function renderTweet(data) {
         for (let index of data) {
             let $tweet = createTweetElement(index);
-            $('#tweet-container').append($tweet);
+            $('#tweet-container').prepend($tweet);
         }
     };
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
         return ($tweet);
     }
 
-    
+
     $('form').on('submit', function (e) {
         e.preventDefault();
         //gets the data entered into the form and sends it as a serialized string to our //database using the POST method.
@@ -88,49 +88,31 @@ $(document).ready(function () {
         if (counter.length <= 0) {
             alert('Please enter some text')
         } else {
-            if (counter.length > 140 ) {
+            if (counter.length > 140) {
                 alert('This tweet is too long')
             } else {
                 $.ajax('/tweets/', {
                     method: 'POST',
                     data: data
-                }).done(function () {
+                }).done(function (res) {
+                    loadTweets(res);
                     $('form textarea').val(''); //clears text area
                 })
             }
         }
     });
 
-    //CONDITIONAL FUNCTION FOR TWEET TEXT AREA LENGTH 
 
+    ////loadTweets is responsible for fetching tweets from the http://localhost:8080/tweets //page.
+    function loadTweets() {
+        $.ajax({
+            url: '/tweets/', //makes a request with jQuery to /tweets to receive array  //tweets as JSON
+            method: 'GET',
+            success: function (data) {
 
-    //END CONDITIONAL FUNCTION
-
-//
-////loadTweets is responsible for fetching tweets from the http://localhost:8080/tweets //page.
-function loadTweets() {
-    $.ajax({
-        url: '/tweets/', //makes a request with jQuery to /tweets to receive array  //tweets as JSON
-        method: 'GET',
-        success: function (data) {
-            renderTweet(data);
-        } //success callback will renderTweets;
-    })
-}
-//
-loadTweets();
+                renderTweet(data);
+            }
+        })
+    }
 
 });
-
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- * 
-
-The tweet data object that the function will take will have all the necessary tweet data:
- * 
- * 
- * 
- * 
- */
