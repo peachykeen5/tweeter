@@ -30,7 +30,7 @@ nav#nav-bar {
     float: left;
 }
 
-#nav-bar i {
+button > i {
     margin: 5px;
     color: #00a087;
     visibility: visible;
@@ -38,7 +38,7 @@ nav#nav-bar {
 
 }
 
-#nav-bar .compose {
+button.compose {
     float: right;
     margin: 5px;
     border: 1px solid black;
@@ -49,14 +49,15 @@ nav#nav-bar {
     filter: opacity(90%);
 
 }
+#nav-bar button:hover i {
+    color: black;
+}
 
-#nav-bar:hover .compose {
+button.compose:hover  {
     color: black;
     cursor: pointer;
     filter: opacity(100%);
 }
 
-#nav-bar:hover i {
-    color: black;
-}
+
 /*  END NAVBAR STYLING SECTION   */
