@@ -24,7 +24,8 @@ $(document).ready(function () {
         let icon2 = $('<i>').addClass("fas fa-retweet");
         let icon3 = $('<i>').addClass("fas fa-heart");
         iconSpan.append(icon1, icon2, icon3);
-        let $footer = $('<footer>').append(tweet.created_at, iconSpan);
+        let date = new Date(tweet.created_at)
+        let $footer = $('<footer>').append(today - date.toLocaleDateString()), iconSpan);
         $tweet.append($header, $tweetBody, $footer);
         return $tweet;
     }
