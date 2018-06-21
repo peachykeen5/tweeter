@@ -5,11 +5,11 @@ Tweeter is a simple, single-page Twitter clone.
 ## Final Product
 
 ### Screenshots
-![Screenshot of composing new tweet](https://github.com/peachykeen5/tweeter/blob/master/docs/Compose-new-tweet.png)
+![Screenshot of composing new tweet](https://github.com/peachykeen5/tweeter/blob/master/docs/create-new-tweet.png)
 
-![Screenshot of new tweet added to forum](https://github.com/peachykeen5/tweeter/blob/master/docs/New%20tweet%20posted.png)
+![Screenshot of new tweet added to forum](https://github.com/peachykeen5/tweeter/blob/master/docs/posting-new-tweet.png)
 
-![Screenshot of hiding compose tweet function](https://github.com/peachykeen5/tweeter/blob/master/docs/Hide-Tweet-Compose.png)
+![Screenshot of hiding compose tweet function](https://github.com/peachykeen5/tweeter/blob/master/docs/hiding-compose-form.png)
 
 ## Getting Started
 1. Install all dependencies (using the npm install command).
