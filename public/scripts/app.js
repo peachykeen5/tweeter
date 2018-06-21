@@ -45,7 +45,7 @@ $(document).ready(function () {
                 data: data
             }).done(function (res) {
                 loadTweets(res);
-                $('.textarea').val(''); //clears text area
+                $('.textarea').val('');
             })
         }
     });
@@ -56,6 +56,7 @@ $(document).ready(function () {
             method: 'GET',
             success: function (data) {
                 renderTweet(data);
+                $('#counter').html(140);
             }
         })
     }
