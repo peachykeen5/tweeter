@@ -15,11 +15,12 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-MongoClient.connect(MONGOB_URI, (err, db) => {
+MongoClient.connect(MONGOB_URI, (err, client) => {
   if (err) {
     console.error(`Failed to connect:${MONGOB_URI}`);
     throw err;
   }
+  const db = client.db('tweeter');
   console.log(`Connected to mongodb: ${MONGOB_URI}`);
 
   const DataHelpers = require("./lib/data-helpers.js")(db);
