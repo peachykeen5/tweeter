@@ -13,7 +13,7 @@ $(document).ready(function () {
     //this function creates the structure of the tweet and sends it to be rendered
     function createTweetElement(tweet) {
         let $tweet = $('<article>').addClass('tweeter');
-        let image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile'); //creates new image tag with the avatars small object image source
+        let image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile'); 
         let handle = $('<span>').text(tweet.user.handle).addClass('handle')
         let userName = $('<h2>').text(tweet.user.name).append(handle);
         let $header = $('<header>').addClass('tweet');
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     $('#tweet-compose-form').on('submit', function (e) {
         e.preventDefault();
-        //gets the data entered into the form and sends it as a serialized string to our //database using the POST method.
+
         let data = $(this).serialize();
         let counter = e.target[0].value;
         if (counter.length <= 0) {

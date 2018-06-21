@@ -14,8 +14,6 @@ html {
   box-sizing: inherit;
 }
 
-
-
 /*
  * Global layout stuff
  */
@@ -29,6 +27,7 @@ body {
 }
 
 /*  MAIN FEED CONTAINER */
+
 main.container {
   padding: 2em;
   width: 450px;
@@ -36,10 +35,11 @@ main.container {
   margin-top: 80px;
   background-color: white;
 }
+
 /*  END MAIN FEED CONTAINER */
 
-
 /*  TWEETER FEED SECTION  */
+
 #tweet-container article.tweeter {
   filter: opacity(70%);
   margin-top: 10px;
@@ -98,10 +98,8 @@ i {
   visibility: hidden;
 }
 
-
 #tweet-container article.tweeter:hover {
   filter: opacity(100%);
-
 }
 
 #tweet-container article:hover i {

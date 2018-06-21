@@ -43,6 +43,7 @@ button.compose {
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
+    font-size: large;
     color: #00a087;
     line-height: 2;
     height: 80%;
