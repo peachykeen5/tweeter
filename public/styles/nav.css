@@ -35,7 +35,6 @@ nav#nav-bar {
     color: #00a087;
     visibility: visible;
     float: left;
-    z-index: 1;
 
 }
 
@@ -47,12 +46,14 @@ nav#nav-bar {
     color: #00a087;
     line-height: 2;
     height: 80%;
+    filter: opacity(90%);
 
 }
 
 #nav-bar:hover .compose {
     color: black;
     cursor: pointer;
+    filter: opacity(100%);
 }
 
 #nav-bar:hover i {
