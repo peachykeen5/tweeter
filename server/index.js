@@ -2,13 +2,15 @@
 const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
+require('dotenv').config();
 const app = express();
+
 const {
   MongoClient
 } = require("mongodb");
 const MONGOB_URI = process.env.MONGODB_URI;
 
-require('dotenv').config();
+
 
 app.use(bodyParser.urlencoded({
   extended: true
