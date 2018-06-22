@@ -23,7 +23,7 @@ MongoClient.connect(MONGOB_URI, (err, client) => {
     console.error(`Failed to connect:${MONGOB_URI}`);
     throw err;
   }
-  const db = client.db(MONGOB_URI);
+  const db = client.db('tweeter');
   console.log(`Connected to mongodb: ${MONGOB_URI}`);
 
   const DataHelpers = require("./lib/data-helpers.js")(db);
