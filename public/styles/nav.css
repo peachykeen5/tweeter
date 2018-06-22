@@ -38,7 +38,7 @@ button > i {
 
 }
 
-button.compose {
+button {
     float: right;
     margin: 5px;
     border: 1px solid black;
@@ -54,7 +54,7 @@ button.compose {
     color: black;
 }
 
-button.compose:hover  {
+button:hover  {
     color: black;
     cursor: pointer;
     filter: opacity(100%);

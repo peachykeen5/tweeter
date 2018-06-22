@@ -1,5 +1,4 @@
 "use strict";
-
 const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -8,6 +7,7 @@ const {
   MongoClient
 } = require("mongodb");
 const MONGOB_URI = "mongodb://localhost:27017/tweeter";
+
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -32,3 +32,4 @@ MongoClient.connect(MONGOB_URI, (err, client) => {
     console.log("Example app listening on port " + PORT);
   });
 });
+

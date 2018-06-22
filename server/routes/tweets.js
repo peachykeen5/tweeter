@@ -40,7 +40,23 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+  
+  //tweetsRoutes.put("/likes", function(req, res){
+  //  DataHelpers.incrementLikes(tweetId, function(err) {
+  //    // complete
+  //  });
+  //  
+  //  //send the tweet id to the database to get the corresponding tweet
+  //  //update the liked counter by 1
+  //  res.send("sucessfuly sent");
+  //  console.log("success");
+//
+  //})
 
   return tweetsRoutes;
 
 }
+
+
+//, server talks to db
+//db.updateOne({testId: 'someId'}, {$inc: {likeCount: 1}}, {}, callback())

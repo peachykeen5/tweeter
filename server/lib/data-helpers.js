@@ -14,5 +14,12 @@ module.exports = function makeDataHelpers(db) {
       db.collection("tweets").find().toArray(callback);
     }
 
+    //incrementLikes: function(tweetID, callback) {
+    //  db.collection("tweets").find(tweetID);
+    //  
+    //  //node.js mongo client docs
+    //  
+    //}
+
   };
 }

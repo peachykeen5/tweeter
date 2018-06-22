@@ -1,10 +1,11 @@
 $(document).ready(function () {
     loadTweets();
 
-//rendering a new tweet and prepending it to the top of the section//
+    //rendering a new tweet and prepending it to the top of the section//
     function renderTweet(tweets) {
+        $('tweets-container .fa-heart').off('click');
         $('#tweet-container').empty()
-        tweets.forEach(function(element) {
+        tweets.forEach(function (element) {
             let $tweet = createTweetElement(element);
             $('#tweet-container').prepend($tweet);
         })
@@ -13,7 +14,7 @@ $(document).ready(function () {
     //this function creates the structure of the tweet and sends it to be rendered
     function createTweetElement(tweet) {
         let $tweet = $('<article>').addClass('tweeter');
-        let image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile'); 
+        let image = $('<img>').attr('src', tweet.user.avatars.small).addClass('profile');
         let handle = $('<span>').text(tweet.user.handle).addClass('handle')
         let userName = $('<h2>').text(tweet.user.name).append(handle);
         let $header = $('<header>').addClass('tweet');
@@ -22,10 +23,13 @@ $(document).ready(function () {
         let iconSpan = $('<span>').addClass('icons');
         let icon1 = $('<i>').addClass("fas fa-flag");
         let icon2 = $('<i>').addClass("fas fa-retweet");
-        let icon3 = $('<i>').addClass("fas fa-heart");
+        let icon3 = $('<i>').addClass("fas fa-heart").on('click', function(){
+            icon3.addClass('red');
+        });
         iconSpan.append(icon1, icon2, icon3);
-        let date = new Date(tweet.created_at)
-        let $footer = $('<footer>').append(today - date.toLocaleDateString()), iconSpan);
+        let date = tweet.created_at;
+        let pastDate = humanizeDuration(+ new Date() - date, {units : ['d'], round: true });
+        let $footer = $('<footer>').append((pastDate + " ago"), iconSpan);
         $tweet.append($header, $tweetBody, $footer);
         return $tweet;
     }
@@ -63,10 +67,15 @@ $(document).ready(function () {
     }
 
     //function to hide/show compose tweet section 
-    $('#nav-bar button').on('click', function(){
-        $('.new-tweet').slideToggle('slow', function(){
-        $('textarea').focus();
+    $('#nav-bar button.compose').on('click', function () {
+        $('.new-tweet').slideToggle('slow', function () {
+            $('textarea').focus();
         })
     })
 
+    $('#nav-bar button.logout').on('click', function(){
+        alert("Just kidding! This function hasn't been implemented yet 🤷");
+        })
+
+    
 });
