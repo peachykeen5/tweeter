@@ -6,7 +6,7 @@ const app = express();
 const {
   MongoClient
 } = require("mongodb");
-const MONGOB_URI = "mongodb://localhost:27017/tweeter";
+const MONGOB_URI = process.env.MONGODB_URI;
 
 require('dotenv').config();
 
