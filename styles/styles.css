@@ -1,0 +1,259 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  border: 1px;
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/*  MAIN FEED CONTAINER */
+main.container {
+  padding: 2em;
+  width: 450px;
+  margin: auto;
+  margin-top: 80px;
+  background-color: white;
+}
+
+/*  END MAIN FEED CONTAINER */
+/*  TWEETER FEED SECTION  */
+#tweet-container article.tweeter {
+  filter: opacity(70%);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+#tweet-container header.tweet {
+  padding: 5px;
+  height: 75px;
+  background-color: #eee;
+}
+
+#tweet-container img.profile {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  float: left;
+  border-radius: 5px;
+}
+
+#tweet-container H2 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 2;
+}
+
+#tweet-container H2 span {
+  margin-top: 5px;
+  margin-right: 5px;
+  color: darkgrey;
+  font-size: 60%;
+  font-weight: 300;
+  float: right;
+}
+
+#tweet-container p {
+  padding: 5px;
+  width: 100%;
+}
+
+#tweet-container footer {
+  padding: 5px;
+  border-top: 1px solid #eee;
+  font-size: small;
+  color: darkgray;
+}
+
+i {
+  margin: 1px;
+  float: right;
+  color: darkturquoise;
+  visibility: hidden;
+}
+
+#tweet-container article.tweeter:hover {
+  filter: opacity(100%);
+}
+
+#tweet-container article:hover i {
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  main.container {
+    margin: 10px;
+    width: 80%;
+  }
+
+  #tweet-container h2 {
+    font-size: 100%;
+    font-weight: 400;
+  }
+
+  #tweet-container img.profile {
+    display: none;
+  }
+
+  #tweet-container header.tweet {
+    height: 50%;
+  }
+
+  #tweet-container span.handle {
+    size: 50%;
+  }
+}
+/*  END TWEETER FEED SECTION  */
+/*  NAVBAR STYLING SECTION   */
+nav#nav-bar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0px;
+  left: 0px;
+  padding-right: 2em;
+  padding-left: 2em;
+  background-color: #00a087;
+  color: #e8fdff;
+  z-index: 1;
+}
+
+#nav-bar .header {
+  float: left;
+  height: 80px;
+  font-size: 200%;
+  line-height: 2.5;
+  margin-left: 10px;
+}
+
+#nav-bar .logo {
+  background-color: #00a087;
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+
+button > i {
+  margin: 5px;
+  color: #00a087;
+  visibility: visible;
+  float: left;
+}
+
+button {
+  float: right;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: large;
+  color: #00a087;
+  line-height: 2;
+  height: 80%;
+  filter: opacity(90%);
+}
+
+#nav-bar button:hover i {
+  color: black;
+}
+
+button:hover {
+  color: black;
+  cursor: pointer;
+  filter: opacity(100%);
+}
+
+@media (max-width: 600px) {
+  nav#nav-bar {
+    height: 40px;
+  }
+
+  button {
+    height: 60%;
+    font-size: x-small;
+    margin-top: 8px;
+  }
+
+  #nav-bar .logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  #nav-bar .header {
+    font-size: 100%;
+  }
+}
+@media (max-width: 350px) {
+  button {
+    display: none;
+  }
+
+  #nav-bar .header {
+    display: none;
+  }
+}
+@media print {
+  #nav-bar {
+    display: none;
+  }
+}
+/*  END NAVBAR STYLING SECTION   */
+/*  NEW TWEET STYLING SECTION   */
+section.new-tweet {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.new-tweet h2 {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.new-tweet textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+span.counter {
+  font-style: italic;
+  float: right;
+}
+
+.red {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .new-tweet h2 {
+    margin-top: 10px;
+    font-size: 100%;
+  }
+
+  span.counter {
+    font-size: x-small;
+  }
+}
+/*  NEW TWEET STYLING SECTION   */
+
+/*# sourceMappingURL=styles.css.map */

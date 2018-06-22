@@ -1,0 +1,134 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+@import 'variables';
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  border: 1px;
+  margin: 0;
+  color: $secondary-color;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif
+}
+
+/*  MAIN FEED CONTAINER */
+
+main.container {
+  padding: 2em;
+  width: 450px;
+  margin: auto;
+  margin-top: 80px;
+  background-color: white;
+}
+
+/*  END MAIN FEED CONTAINER */
+
+/*  TWEETER FEED SECTION  */
+
+#tweet-container {
+  article.tweeter {
+    filter: opacity(70%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: $border-style;
+    border-radius: 5px;
+  }
+  header.tweet {
+    padding: 5px;
+    height: 75px;
+    background-color: #eee;
+  }
+  img.profile {
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    float: left;
+    border-radius: 5px;
+  }
+  H2 {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 2;
+
+  }
+  H2 span {
+    margin-top: 5px;
+    margin-right: 5px;
+    color: darkgrey;
+    font-size: 60%;
+    font-weight: 300;
+    float: right;
+  }
+  p {
+    padding: 5px;
+    width: 100%;
+  }
+  footer {
+    padding: 5px;
+    border-top: 1px solid #eee;
+    font-size: small;
+    color: darkgray;
+  }
+}
+
+i {
+  margin: 1px;
+  float: right;
+  color: $brand-color;
+  visibility: hidden;
+}
+
+#tweet-container {
+  article.tweeter:hover {
+    filter: opacity(100%);
+  }
+  article:hover i {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-device-width: 640px) {
+  main.container {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  main.container {
+    margin-top: 10px;
+  }
+  #tweet-container h2 {
+    font-size: 100%;
+    font-weight: 400;
+  }
+  #tweet-container img.profile {
+    display: none;
+  }
+  #tweet-container header.tweet {
+    height: 50%;
+  }
+  #tweet-container span.handle {
+    size: 50%;
+  }
+}
+
+
+/*  END TWEETER FEED SECTION  */

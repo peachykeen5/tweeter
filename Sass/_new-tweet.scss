@@ -1,20 +1,20 @@
 /*  NEW TWEET STYLING SECTION   */
 
 section.new-tweet {
-    border: 1px solid lightgrey;
+    border: $border-style;
     border-radius: 5px;
     padding: 10px;
     background-color: #eee;
-}
 
-.new-tweet h2 {
-    padding: 5px;
-    border-bottom: 1px solid black;
-}
-
-.new-tweet textarea {
-    width: 100%;
-    padding: 5px;
+    h2 {
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+    
+    textarea {
+        width: 100%;
+        padding: 5px;
+    }
 }
 
 span.counter {

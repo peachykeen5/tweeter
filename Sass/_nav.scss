@@ -1,5 +1,6 @@
 /*  NAVBAR STYLING SECTION   */
 
+@import 'variables';
 nav#nav-bar {
     position: fixed;
     width: 100%;
@@ -8,29 +9,30 @@ nav#nav-bar {
     left: 0px;
     padding-right: 2em;
     padding-left: 2em;
-    background-color: #00a087;
+    background-color: $brand-color;
     color: #e8fdff;
     z-index: 1;
 }
 
-#nav-bar .header {
-    float: left;
-    height: 80px;
-    font-size: 200%;
-    line-height: 2.5;
-    margin-left: 10px;
-}
-
-#nav-bar .logo {
-    background-color: #00a087;
-    height: 80px;
-    width: 80px;
-    float: left;
+#nav-bar {
+    .header {
+        float: left;
+        height: 80px;
+        font-size: 200%;
+        line-height: 2.5;
+        margin-left: 10px;
+    }
+    .logo {
+        background-color: $brand-color;
+        height: 80px;
+        width: 80px;
+        float: left;
+    }
 }
 
 button>i {
     margin: 5px;
-    color: #00a087;
+    color: $brand-color;
     visibility: visible;
     float: left;
 }
@@ -41,7 +43,7 @@ button {
     border: 1px solid black;
     border-radius: 5px;
     font-size: large;
-    color: #00a087;
+    color: $brand-color;
     line-height: 2;
     height: 80%;
     filter: opacity(90%);
@@ -72,9 +74,7 @@ button:hover {
     }
     #nav-bar .header {
         font-size: 100%;
-
     }
-
 }
 
 @media (max-width: 350px) {
