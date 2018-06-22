@@ -105,4 +105,24 @@ i {
   visibility: visible;
 }
 
+@media (max-width: 600px) {
+  main.container {
+    margin: 10px;
+    width: 80%;
+  }
+  #tweet-container h2 {
+    font-size: 100%;
+    font-weight: 400;
+  }
+  #tweet-container img.profile {
+    display: none;
+  }
+  #tweet-container header.tweet {
+    height: 50%;
+  }
+  #tweet-container span.handle {
+    size: 50%;
+  }
+}
+
 /*  END TWEETER FEED SECTION  */

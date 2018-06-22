@@ -1,4 +1,3 @@
-
 /*  NEW TWEET STYLING SECTION   */
 
 section.new-tweet {
@@ -18,14 +17,23 @@ section.new-tweet {
     padding: 5px;
 }
 
-
 span.counter {
     font-style: italic;
     float: right;
-
 }
 
 .red {
     color: red;
 }
+
+@media (max-width: 600px) {
+    .new-tweet h2 {
+        margin-top: 10px;
+        font-size: 100%;
+    }
+    span.counter {
+        font-size: x-small;
+    }
+}
+
 /*  NEW TWEET STYLING SECTION   */

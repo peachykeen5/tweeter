@@ -1,4 +1,3 @@
-
 /*  NAVBAR STYLING SECTION   */
 
 nav#nav-bar {
@@ -13,7 +12,6 @@ nav#nav-bar {
     color: #e8fdff;
     z-index: 1;
 }
-
 
 #nav-bar .header {
     float: left;
@@ -30,12 +28,11 @@ nav#nav-bar {
     float: left;
 }
 
-button > i {
+button>i {
     margin: 5px;
     color: #00a087;
     visibility: visible;
     float: left;
-
 }
 
 button {
@@ -48,17 +45,51 @@ button {
     line-height: 2;
     height: 80%;
     filter: opacity(90%);
-
 }
+
 #nav-bar button:hover i {
     color: black;
 }
 
-button:hover  {
+button:hover {
     color: black;
     cursor: pointer;
     filter: opacity(100%);
 }
 
+@media (max-width: 600px) {
+    nav#nav-bar {
+        height: 40px;
+    }
+    button {
+        height: 60%;
+        font-size: x-small;
+        margin-top: 8px;
+    }
+    #nav-bar .logo {
+        height: 40px;
+        width: 40px;
+    }
+    #nav-bar .header {
+        font-size: 100%;
+
+    }
+
+}
+
+@media (max-width: 350px) {
+    button {
+        display: none;
+    }
+    #nav-bar .header {
+        display: none;
+    }
+}
+
+@media print {
+    #nav-bar {
+        display: none;
+    }
+}
 
 /*  END NAVBAR STYLING SECTION   */
