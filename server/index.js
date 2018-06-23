@@ -9,7 +9,7 @@ const {
   MongoClient
 } = require("mongodb");
 const MONGOB_URI = process.env.MONGODB_URI;
-const mongoDb = process.env.MONGODB
+//const mongoDb = process.env.MONGODB
 
 
 app.use(bodyParser.urlencoded({
@@ -23,7 +23,6 @@ MongoClient.connect(MONGOB_URI, (err, client) => {
     console.error(`Failed to connect:${MONGOB_URI}`);
     throw err;
   }
-  //const db = client.db("heroku_mb3vz7gh");
   console.log(`Connected to mongodb: ${MONGOB_URI}`);
 
   const DataHelpers = require("./lib/data-helpers.js")(client);
