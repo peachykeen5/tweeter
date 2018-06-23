@@ -23,10 +23,10 @@ MongoClient.connect(MONGOB_URI, (err, client) => {
     console.error(`Failed to connect:${MONGOB_URI}`);
     throw err;
   }
-  const db = client.db("heroku_mb3vz7gh");
+  //const db = client.db("heroku_mb3vz7gh");
   console.log(`Connected to mongodb: ${MONGOB_URI}`);
 
-  const DataHelpers = require("./lib/data-helpers.js")(db);
+  const DataHelpers = require("./lib/data-helpers.js")(client);
 
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
