@@ -9,7 +9,7 @@ const {
   MongoClient
 } = require("mongodb");
 const MONGOB_URI = process.env.MONGODB_URI;
-//const mongoDb = process.env.MONGODB
+
 
 
 app.use(bodyParser.urlencoded({
@@ -31,6 +31,6 @@ MongoClient.connect(MONGOB_URI, (err, client) => {
 
   app.use("/tweets", tweetsRoutes);
   app.listen(process.env.PORT || 8080) //=> {
-    //console.log("Example app listening on port " + PORT);
+  
 
 });
